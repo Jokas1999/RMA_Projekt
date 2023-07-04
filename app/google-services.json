@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "243006655414",
+    "project_id": "groupfinder-240da",
+    "storage_bucket": "groupfinder-240da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243006655414:android:6ba8279bd4c68a1a380f17",
+        "android_client_info": {
+          "package_name": "com.platuzic.groupfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243006655414-6kqv9kuda5o4p1u96eha7f3d09u11q0s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV9Ixi7_muAGWaS5Hvn6lzKsrxpZvNg7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243006655414-6kqv9kuda5o4p1u96eha7f3d09u11q0s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

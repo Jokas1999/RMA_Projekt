@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GroupFinder</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="email">Email...</string>
+    <string name="password">Password...</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="name">Name...</string>
+    <string name="repeat_password">Repeat Password...</string>
+    <string name="register">Register</string>
+    <string name="groups">Groups</string>
+    <string name="search">Search...</string>
+    <string name="joined_groups">Joined groups</string>
+    <string name="not_joined_groups">Not joined groups</string>
+    <string name="add_group">Add group</string>
+    <string name="group_name">Group Name...</string>
+    <string name="enter_group">Enter group</string>
+    <string name="add_post">Add Post</string>
+    <string name="create_post">Create post</string>
+    <string name="what_is_on_your_mind">What is on your mind?</string>
+    <string name="post">Post</string>
+    <string name="leave_group">Leave group</string>
+</resources>

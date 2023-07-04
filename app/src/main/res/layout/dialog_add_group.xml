@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.platuzic.groupfinder.groupposts.viewmodel.GroupsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/Dialog_AddGroup_Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/add_group"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Dialog_AddGroup_GroupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/black"
+            android:minHeight="48dp"
+            android:hint="@string/group_name"
+            android:text="@={viewModel.groupName}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/Dialog_AddGroup_Title"
+            app:layout_constraintStart_toStartOf="@id/Dialog_AddGroup_Title"
+            app:layout_constraintTop_toBottomOf="@id/Dialog_AddGroup_Title" />
+
+        <Button
+            android:id="@+id/Dialog_AddGroup_Add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:minHeight="48dp"
+            android:text="@string/add_group"
+            app:layout_constraintEnd_toEndOf="@id/Dialog_AddGroup_GroupName"
+            app:layout_constraintStart_toStartOf="@id/Dialog_AddGroup_GroupName"
+            app:layout_constraintTop_toBottomOf="@id/Dialog_AddGroup_GroupName" />
+
+        <ImageButton
+            android:id="@+id/Dialog_AddGroup_Close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_close_24"
+            android:layout_margin="20dp"
+            android:backgroundTint="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+ </layout>

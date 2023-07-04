@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.platuzic.groupfinder.groupposts.view.PostFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.platuzic.groupfinder.groupposts.viewmodel.PostViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".groupposts.view.PostFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Fragment_Post_GroupName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="@{viewModel.group.name}"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/Fragment_Post_EnterLeaveGroupLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Fragment_Post_GroupName">
+
+
+                    <TextView
+                        android:id="@+id/Fragment_Post_LeaveGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:onClick="@{() -> viewModel.leaveGroup()}"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/leave_group"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/Fragment_Post_EnterGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:onClick="@{() -> viewModel.enterGroup()}"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/enter_group"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/Fragment_Post_AddPostLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Fragment_Post_EnterLeaveGroupLayout">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/Fragment_Post_EditTextPost"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/darker_gray"
+                            android:gravity="top|start"
+                            android:hint="@string/what_is_on_your_mind"
+                            android:inputType="textMultiLine"
+                            android:minHeight="100dp"
+                            android:padding="10dp"
+                            android:text="@={viewModel.addPostText}" />
+
+                        <ImageView
+                            android:id="@+id/Fragment_Post_ImagePost"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:background="@android:color/darker_gray"
+                            android:onClick="@{() -> fragment.openPicker()}"
+                            android:padding="5dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            android:src="@drawable/ic_baseline_camera_alt_24"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@android:color/darker_gray"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/Fragment_Post_AddTextPost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragment.addTextPostClicked()}"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_baseline_text_fields_24" />
+
+                            <ImageView
+                                android:id="@+id/Fragment_Post_AddImagePost"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="@{() -> fragment.addImagePostClicked()}"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_baseline_image_24" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:onClick="@{() -> viewModel.createPost()}"
+                                android:padding="10dp"
+                                android:text="@string/post"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/white"
+                                android:textSize="22sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/Fragment_Post_NestedScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Fragment_Post_AddPostLayout">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/Fragment_Post_RV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </androidx.core.widget.NestedScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
